@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.Map;
 
-@CrossOrigin(origins = "http://localhost:8888")
+@CrossOrigin(origins = "http://hyeon-todoweb.s3-website.ap-northeast-2.amazonaws.com")
 @RestController
 public class TodoController {
     private static Map<Integer, Todo> todoRepo = new HashMap<>();
@@ -26,7 +26,14 @@ public class TodoController {
     public ResponseEntity<Object> setTodoComplete(@PathVariable("id") int id, @RequestBody Todo todo) {
         todoRepo.get(id).setCompleted(true);
 
-        return new ResponseEntity<>("Todo is completed successsfully", HttpStatus.OK);
+        return new ResponseEntity<>("Complete is updated successsfully", HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/todos/{id}/date", method = RequestMethod.PUT)
+    public ResponseEntity<Object> setTodoDate(@PathVariable("id") int id, @RequestBody Todo todo) {
+        todoRepo.get(id).setDate(todo.getDate());
+
+        return new ResponseEntity<>("Date is updated successsfully", HttpStatus.OK);
     }
 
     @RequestMapping(value = "/todos/{id}/priority", method = RequestMethod.PUT)
