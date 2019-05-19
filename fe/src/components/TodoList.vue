@@ -80,62 +80,6 @@
                 <b-button size="sm" variant="outline-primary" @click="getDate(row.item)">OK</b-button>
             </template>
           </datetime>
-          <!-- <span v-if="row.item.date != null">
-            {{row.item.date}}
-          </span> -->
-          <!-- <span v-if="row.item.date != null">
-            {{row.item.date}}
-          </span>
-          <span v-else>
-            <datetime id="date-btn" type="date" v-model="row.item.date" placeholder="Pick a day" @change="getTime(row.item)">
-              <template slot="button-confirm">
-                  <b-button size="sm" variant="outline-primary" @click="getDate(row.item)">OK</b-button>
-
-                </template>
-            </datetime>
-          </span> -->
-          <!-- <p style="width:50px, margin:auto">
-          </p> -->
-          <!-- <div v-if="getTime() > row.item.date">
-            {{row.item.date}}
-          </div>
-          <div v-else>
-            {{row.item._rowVariant = 'danger'}}
-          </div> -->
-          <!-- <b-button size="sm" variant="outline-success" @click="show=true">설정</b-button>
-
-          <b-modal
-                v-model="show"
-                title="Modal Variants"
-              >
-
-                <div slot="modal-footer" class="w-100">
-                  <p class="float-left">Modal Footer Content</p>
-                  <b-button
-                    variant="primary"
-                    size="sm"
-                    class="float-right"
-                    @click="show=false"
-                  >
-                    Close
-                  </b-button>
-                </div>
-              </b-modal> -->
-
-          <!-- <b-modal v-model="modalShow">Hello From Modal!</b-modal> -->
-          <!-- <div class="col-sm-5">
-      <vue-datetime-picker class="vue-picker3" name="picker3"
-                           :model.sync="result3"
-                           type="date"
-                           language="en-US"
-                           date-format="L">
-      </vue-datetime-picker>
-    </div>
-          <div class="col-sm-4">
-      <p class="form-control-static">
-        Selected Date: <span class="vue-result3"></span>
-      </p>
-    </div> -->
         </template>
       </b-table>
     </div>
@@ -159,7 +103,7 @@ export const AXIOS = axios.create({
 })
 
 export default {
-  name: 'HelloWorld',
+  name: 'TodoList',
   data () {
     return {
       id: 1,
