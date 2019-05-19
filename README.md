@@ -24,7 +24,7 @@ npm --save install vue bootstrap bootstrap-vue vue-datetime vue-datetime-picker 
 # build
 npm run build
 
-# http://localhost:8888 로 접속
+# http://localhost:8888 로 접속해서 확인
 npm run dev
 
 ```
