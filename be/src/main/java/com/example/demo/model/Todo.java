@@ -1,7 +1,8 @@
 package com.example.demo.model;
 
-import java.time.LocalDateTime;
+import org.apache.ibatis.type.Alias;
 
+@Alias("todo")
 public class Todo {
     int id;
     String title;
