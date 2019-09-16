@@ -91,17 +91,6 @@ import 'vue-datetime/dist/vue-datetime.css'
 import axios from 'axios'
 import moment from 'moment'
 
-export const AXIOS = axios.create({
-  baseURL: `http://http://springgettingstarted-env.a5hc2jh3bq.ap-northeast-2.elasticbeanstalk.com`,
-  headers: {
-    'Access-Control-Allow-Origin': '*',
-    'content-type': 'application/json',
-    'Accept': 'application/json',
-    'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS, HEAD',
-    'Allow': 'GET, POST, PUT, DELETE, OPTIONS, HEAD'
-  }
-})
-
 export default {
   name: 'TodoList',
   data () {
@@ -145,7 +134,7 @@ export default {
   },
   methods: {
     setPriority (item) {
-      AXIOS.put(`http://springgettingstarted-env.a5hc2jh3bq.ap-northeast-2.elasticbeanstalk.com/${item.id}/priority`, {
+      axios.put(`http://localhost:8080/${item.id}/priority`, {
         id: item.id,
         title: item.title,
         content: item.content,
@@ -167,7 +156,7 @@ export default {
         console.log(moment().format('YYYYMMDD'))
       }
       console.log(moment(item.date).format('YYYYMMDD'))
-      AXIOS.put(`http://springgettingstarted-env.a5hc2jh3bq.ap-northeast-2.elasticbeanstalk.com/todos/${item.id}/priority`, {
+      axios.put(`http://localhost:8080/todos/${item.id}/priority`, {
         id: item.id,
         title: item.title,
         content: item.content,
@@ -197,7 +186,7 @@ export default {
       // return moment(date).format('YYYYMMDD')
     },
     completeTodo (item) {
-      AXIOS.put(`http://springgettingstarted-env.a5hc2jh3bq.ap-northeast-2.elasticbeanstalk.com/todos/${item.id}/completed`, {
+      axios.put(`http://localhost:8080/todos/${item.id}/completed`, {
         id: item.id,
         title: item.title,
         content: item.content,
@@ -216,7 +205,7 @@ export default {
         })
     },
     deleteTodo (item) {
-      AXIOS.get(`http://springgettingstarted-env.a5hc2jh3bq.ap-northeast-2.elasticbeanstalk.com/delete/todos/${item.id}`)
+      axios.get(`http://localhost:8080/delete/todos/${item.id}`)
         .then(response => {
           this.response = response.data
           console.log(response.data)
@@ -276,7 +265,7 @@ export default {
         return
       }
 
-      AXIOS.post(`http://springgettingstarted-env.a5hc2jh3bq.ap-northeast-2.elasticbeanstalk.com/todos`, {
+      axios.post(`http://localhost:8080/todos`, {
         id: this.id,
         title: this.title,
         content: this.content,
@@ -309,7 +298,7 @@ export default {
         return
       }
 
-      AXIOS.put(`http://springgettingstarted-env.a5hc2jh3bq.ap-northeast-2.elasticbeanstalk.com/todos/${item.id}`, {
+      axios.put(`http://localhost:8080/todos/${item.id}`, {
         id: item.id,
         title: item.title,
         content: item.content,
@@ -332,7 +321,7 @@ export default {
       })
     },
     getTodos () {
-      AXIOS.get(`http://springgettingstarted-env.a5hc2jh3bq.ap-northeast-2.elasticbeanstalk.com/list`)
+      axios.get('http://localhost:8080/list')
         .then(response => {
           this.response = response.data
           this.todos = response.data
