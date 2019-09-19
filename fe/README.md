@@ -2,29 +2,29 @@
 
 > A Vue.js project
 
-## Build Setup
+### 2. Build Setup
 
+ 1. npm 설치
+ ``` bash
+ $ yum install npm
+ ```
+ 
+ 2. 프로젝트 빌드
 ``` bash
-# install dependencies
-npm install
+# frontend 폴더로 이동
+$ cd fe
 
-# serve with hot reload at localhost:8888
-npm run dev
+# package 설치
+$ npm install
 
-# build for production with minification
-npm run build
+# module 추가
+$ npm --save install vue bootstrap bootstrap-vue vue-datetime vue-datetime-picker vue-star-rating moment vue-momentjs axios luxon
 
-# build for production and view the bundle analyzer report
-npm run build --report
+# build
+$ npm run build
 
-# run unit tests
-npm run unit
+# http://localhost:8888 로 접속해서 확인
+$ npm run dev
 
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
 ```
-
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
